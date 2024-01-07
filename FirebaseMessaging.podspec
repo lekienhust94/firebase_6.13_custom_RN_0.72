@@ -14,10 +14,6 @@ device, and it is completely free.
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.authors          = 'Google, Inc.'
 
-  s.source           = {
-    :git => 'https://github.com/firebase/firebase-ios-sdk.git',
-    :tag => 'Messaging-' + s.version.to_s
-  }
   s.social_media_url = 'https://twitter.com/Firebase'
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
@@ -43,7 +39,6 @@ device, and it is completely free.
   s.framework = 'SystemConfiguration'
   s.weak_framework = 'UserNotifications'
   s.dependency 'FirebaseAnalyticsInterop', '~> 1.3'
-  s.dependency 'FirebaseCore', '~> 6.2'
   s.dependency 'FirebaseInstanceID', '~> 4.1'
   s.dependency 'GoogleUtilities/AppDelegateSwizzler', '~> 6.2'
   s.dependency 'GoogleUtilities/Reachability', '~> 6.2'
@@ -51,12 +46,4 @@ device, and it is completely free.
   s.dependency 'GoogleUtilities/UserDefaults', '~> 6.2'
   s.dependency 'Protobuf', '~> 3.9', '>= 3.9.2'
 
-  s.test_spec 'unit' do |unit_tests|
-    unit_tests.source_files = 'Example/Messaging/Tests/*.{m,h,swift}'
-    unit_tests.requires_app_host = true
-    unit_tests.pod_target_xcconfig = {
-     'CLANG_ENABLE_OBJC_WEAK' => 'YES'
-    }
-    unit_tests.dependency 'OCMock'
-  end
 end

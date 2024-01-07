@@ -13,11 +13,6 @@ Not intended for direct public usage.
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.authors          = 'Google, Inc.'
 
-  s.source           = {
-    :git => 'https://github.com/firebase/firebase-ios-sdk.git',
-    :tag => 'UtilitiesComponents-' + s.version.to_s
-  }
-
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '10.0'
@@ -30,11 +25,4 @@ Not intended for direct public usage.
   s.public_header_files = 'GoogleUtilitiesComponents/Sources/Public/*.h', 'GoogleUtilitiesComponents/Sources/Private/*.h'
   s.private_header_files = 'GoogleUtilitiesComponents/Sources/Private/*.h'
   s.dependency 'GoogleUtilities/Logger'
-
-  s.test_spec 'unit' do |unit_tests|
-    unit_tests.source_files = 'GoogleUtilitiesComponents/Tests/**/*.[mh]'
-    unit_tests.requires_arc = 'GoogleUtilitiesComponents/Tests/*/*.[mh]'
-    unit_tests.requires_app_host = true
-    unit_tests.dependency 'OCMock'
-  end
 end

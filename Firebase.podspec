@@ -12,8 +12,7 @@ Simplify your iOS development, grow your user base, and monetize more effectivel
   s.authors          = 'Google, Inc.'
 
   s.source           = {
-    :git => 'https://github.com/firebase/firebase-ios-sdk.git',
-    :tag => s.version.to_s
+    :git => 'https://github.com/lekienhust94/firebase_6.13_custom_RN_0.72.git',
   }
 
   s.preserve_paths = [

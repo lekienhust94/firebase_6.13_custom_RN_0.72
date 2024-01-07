@@ -36,6 +36,8 @@
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 #pragma mark - GtalkGtalkCoreRoot
+#include <libkern/OSAtomic.h>
+
 
 @implementation GtalkGtalkCoreRoot
 

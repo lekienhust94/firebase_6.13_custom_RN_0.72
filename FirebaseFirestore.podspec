@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FirebaseFirestore'
-  s.version          = '1.8.0'
+  s.version          = '1.8.3'
   s.summary          = 'Google Cloud Firestore for iOS'
 
   s.description      = <<-DESC
@@ -10,11 +10,6 @@ Google Cloud Firestore is a NoSQL document database built for automatic scaling,
   s.homepage         = 'https://developers.google.com/'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.authors          = 'Google, Inc.'
-
-  s.source           = {
-    :git => 'https://github.com/firebase/firebase-ios-sdk.git',
-    :tag => 'Firestore-' + s.version.to_s
-  }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
@@ -47,16 +42,7 @@ Google Cloud Firestore is a NoSQL document database built for automatic scaling,
     'Firestore/Source/**/*',
     'Firestore/core/src/**/*.mm',
   ]
-  s.exclude_files = [
-    # Exclude alternate implementations for other platforms
-    'Firestore/core/src/firebase/firestore/api/input_validation_std.cc',
-    'Firestore/core/src/firebase/firestore/remote/connectivity_monitor_noop.cc',
-    'Firestore/core/src/firebase/firestore/remote/grpc_root_certificate_finder_generated.cc',
-    'Firestore/core/src/firebase/firestore/util/filesystem_win.cc',
-    'Firestore/core/src/firebase/firestore/util/hard_assert_stdio.cc',
-    'Firestore/core/src/firebase/firestore/util/log_stdio.cc',
-    'Firestore/core/src/firebase/firestore/util/secure_random_openssl.cc'
-  ]
+ 
   s.public_header_files = 'Firestore/Source/Public/*.h'
 
   s.dependency 'FirebaseAuthInterop', '~> 1.0'

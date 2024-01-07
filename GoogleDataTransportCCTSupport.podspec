@@ -12,10 +12,6 @@ Support library to provide event prioritization and uploading for the GoogleData
   s.homepage         = 'https://developers.google.com/'
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.authors          = 'Google, Inc.'
-  s.source           = {
-    :git => 'https://github.com/firebase/firebase-ios-sdk.git',
-    :tag => 'DataTransportCCTSupport-' + s.version.to_s
-  }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
@@ -62,35 +58,6 @@ Support library to provide event prioritization and uploading for the GoogleData
         'UILaunchStoryboardName' => 'Main',
         'UIMainStoryboardFile' => 'Main',
         'NSMainStoryboardFile' => 'Main'
-      }
-    end
-  end
-
-  # Test specs
-  s.test_spec 'Tests-Unit' do |test_spec|
-    test_spec.requires_app_host = false
-    test_spec.source_files = 'GoogleDataTransportCCTSupport/GDTCCTTests/Unit/**/*.{h,m}'
-    test_spec.resources = ['GoogleDataTransportCCTSupport/GDTCCTTests/Data/**/*']
-    test_spec.pod_target_xcconfig = header_search_paths
-    test_spec.dependency 'GCDWebServer'
-  end
-
-  s.test_spec 'Tests-Integration' do |test_spec|
-    test_spec.requires_app_host = false
-    test_spec.source_files = 'GoogleDataTransportCCTSupport/GDTCCTTests/Integration/**/*.{h,m}'
-    test_spec.resources = ['GoogleDataTransportCCTSupport/GDTCCTTests/Data/**/*']
-    test_spec.pod_target_xcconfig = header_search_paths
-  end
-
-  # Monkey test specs, only enabled for development.
-  if ENV['GDT_DEV'] && ENV['GDT_DEV'] == '1' then
-    s.test_spec 'Tests-Monkey' do |test_spec|
-      test_spec.requires_app_host = true
-      test_spec.app_host_name = 'GoogleDataTransportCCTSupport/TestApp'
-      test_spec.dependency 'GoogleDataTransportCCTSupport/TestApp'
-      test_spec.source_files = ['GoogleDataTransportCCTSupport/GDTCCTTests/Monkey/**/*.{swift}']
-      test_spec.info_plist = {
-        'GDT_MONKEYTEST' => '1'
       }
     end
   end
